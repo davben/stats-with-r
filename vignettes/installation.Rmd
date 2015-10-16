@@ -1,0 +1,40 @@
+---
+title: "Installation von \\textsf{R} und RStudio"
+#author: "David Ben&#x10D;ek"
+#email: "david.bencek@ifw-kiel.de"
+#phone: "0431-8814-470"
+#date: 12\. August 2015
+#semester: "WS 2015/16"
+#slot: "Montag, 10:00h--12:00h"
+#room: "WSP1 R.114"
+#contact: "nach Vereinbarung"
+output: 
+  pdf_document:
+    #template: syllabus_template.tex
+    latex_engine: xelatex
+    keep_tex: false
+documentclass: article
+geometry: 
+    - left=3.75cm
+    - right=3.75cm
+    - top=3.5cm
+    - bottom=4cm
+---
+
+# \textsf{R}
+
+\textsf{R} kann unter [https://cran.r-project.org/](https://cran.r-project.org/) heruntergeladen werden.
+
+- Wählen Sie die für Ihr Betriebssystem passende Version aus. Davon hängt der nächste Schritt ab:
+    - Windows: Klicken Sie auf "base" und anschließend auf "Download R 3.2.2 for Windows".
+    - Mac: Klicken Sie auf die aktuellste \*.pkg-Datei (derzeit *R-3.2.2.pkg*).
+    - Linux: Wählen Sie Ihre Distribution und folgen Sie der jeweiligen Anleitung.
+- Windows und Mac: Führen Sie die heruntergeladene Installationsdatei aus. Der Installationsprozess ist recht selbsterklärend.
+
+# RStudio
+Nachdem Sie \textsf{R} installiert haben, sollten Sie auch RStudio installieren. Sie finden die Download-Seite unter [http://www.rstudio.com/download](http://www.rstudio.com/download).
+
+- Hier wählen Sie unter "Installers" die zu Ihrem Betriebssystem passende Datei aus.
+- Die anschließende Installation sollte unkompliziert sein.
+
+Nach der Installation rufen Sie RStudio wie jedes andere Programm auf.

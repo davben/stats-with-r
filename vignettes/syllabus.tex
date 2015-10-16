@@ -1,0 +1,322 @@
+\documentclass[]{article}
+
+\usepackage{lmodern}
+
+
+\setlength\parindent{0pt}
+
+\usepackage{amssymb,amsmath}
+% for equation numbering:
+\renewcommand{\[}{\begin{equation}}
+\renewcommand{\]}{\end{equation}}
+
+\newcommand{\R}{\textsf{R}}
+
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+    \usepackage{xltxtra,xunicode}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+\usepackage[left=3.5cm,right=3.5cm,top=2cm,bottom=4cm]{geometry}
+
+
+
+
+
+
+\usepackage{longtable,booktabs, dcolumn, rotating}
+\usepackage{subfig}
+
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={David Benček},
+            pdftitle={Einführung in die statistische Analyse mit},
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+
+
+
+%\setlength{\parindent}{0pt}
+%\setlength{\parskip}{6pt plus 2pt minus 1pt}
+%\setlength{\emergencystretch}{3em}  % prevent overfull lines
+
+\setcounter{secnumdepth}{0}
+
+
+
+\title{Einführung in die statistische Analyse mit \R{}}
+\author{David Benček}
+\date{12. August 2015}
+
+
+% Custom header for syllabus
+
+\makeatletter
+\renewcommand\maketitle{%
+ \null\hfill Stand: \@date\vspace{0.5cm}
+ {\bfseries
+  \begin{center}
+      {\Large \@title}\\
+      {{\mdseries WS 2015/16}}
+  \end{center}
+  \begin{minipage}[t][][t]{0.23\linewidth}
+			Termin:\\
+			Raum:\\
+			Dozent:\\
+			E-Mail:\\
+			Telefon:\\
+			Sprechstunde:\\
+		\end{minipage}
+		\begin{minipage}[t][][t]{0.7\linewidth}
+			Montag, 10:00h--12:00h\\
+			WSP1 R.114\\
+			\@author\\
+			\href{mailto:david.bencek@ifw-kiel.de}{\nolinkurl{david.bencek@ifw-kiel.de}}\\
+			0431-8814-470\\
+			nach Vereinbarung\\
+		\end{minipage}
+ }
+ 
+}
+\makeatother
+
+% Change size of section titles
+\usepackage{titlesec}
+\titleformat*{\section}{\large\bfseries}
+\titleformat*{\subsection}{\bfseries}
+
+
+\begin{document}
+\maketitle
+
+
+
+
+
+
+\section{Kursbeschreibung}\label{kursbeschreibung}
+
+Der Kurs vermittelt ein Grundwissen der statistischen Analyse. Dabei
+steht die praktische Anwendung in Form der Datenanalyse im Vordergrund.
+Während des gesamten Kurses wird hierfür die freie Programmiersprache
+\R{} verwendet. Es werden weder Programmier- noch Statistikkenntnisse
+vorausgesetzt.
+
+Ziel des Kurses ist, die TeilnehmerInnen in die Lage zu versetzen, eine
+explorative Datenanalyse in \R{} durchzuführen sowie einfache
+Regressionsmodelle nachzuvollziehen, selbst zu berechnen und zu
+interpretieren.
+
+\section{Kursplan (vorläufig)}\label{kursplan-vorlaufig}
+
+\begin{longtable}[c]{@{}rll@{}}
+\toprule
+\begin{minipage}[b]{0.18\columnwidth}\raggedleft\strut
+Sitzung
+\strut\end{minipage} &
+\begin{minipage}[b]{0.18\columnwidth}\raggedright\strut
+Datum
+\strut\end{minipage} &
+\begin{minipage}[b]{0.42\columnwidth}\raggedright\strut
+Thema
+\strut\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.18\columnwidth}\raggedleft\strut
+1
+\strut\end{minipage} &
+\begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+19.10.15
+\strut\end{minipage} &
+\begin{minipage}[t]{0.42\columnwidth}\raggedright\strut
+Ziele quantitativer Forschung, Grundbegriffe der Datenanalyse
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.18\columnwidth}\raggedleft\strut
+2
+\strut\end{minipage} &
+\begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+26.10.15
+\strut\end{minipage} &
+\begin{minipage}[t]{0.42\columnwidth}\raggedright\strut
+Einführung in \R{} \& RStudio, grundlegende Funktionen
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.18\columnwidth}\raggedleft\strut
+3
+\strut\end{minipage} &
+\begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+02.11.15
+\strut\end{minipage} &
+\begin{minipage}[t]{0.42\columnwidth}\raggedright\strut
+Statistische Grundlagen, Berechnung in \R{}
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.18\columnwidth}\raggedleft\strut
+4
+\strut\end{minipage} &
+\begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+09.11.15
+\strut\end{minipage} &
+\begin{minipage}[t]{0.42\columnwidth}\raggedright\strut
+Statistische Grundlagen, Berechnung in \R{}
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.18\columnwidth}\raggedleft\strut
+5
+\strut\end{minipage} &
+\begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+16.11.15
+\strut\end{minipage} &
+\begin{minipage}[t]{0.42\columnwidth}\raggedright\strut
+Deskriptive Statistiken und Datenvisualisierung
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.18\columnwidth}\raggedleft\strut
+6
+\strut\end{minipage} &
+\begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+23.11.15
+\strut\end{minipage} &
+\begin{minipage}[t]{0.42\columnwidth}\raggedright\strut
+Plots und Datenverarbeitung
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.18\columnwidth}\raggedleft\strut
+7
+\strut\end{minipage} &
+\begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+30.11.15
+\strut\end{minipage} &
+\begin{minipage}[t]{0.42\columnwidth}\raggedright\strut
+Datenverarbeitung
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.18\columnwidth}\raggedleft\strut
+8
+\strut\end{minipage} &
+\begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+07.12.15
+\strut\end{minipage} &
+\begin{minipage}[t]{0.42\columnwidth}\raggedright\strut
+Lineare Regression
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.18\columnwidth}\raggedleft\strut
+9
+\strut\end{minipage} &
+\begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+11.01.16
+\strut\end{minipage} &
+\begin{minipage}[t]{0.42\columnwidth}\raggedright\strut
+Logit-Modell
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.18\columnwidth}\raggedleft\strut
+10
+\strut\end{minipage} &
+\begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+18.01.16
+\strut\end{minipage} &
+\begin{minipage}[t]{0.42\columnwidth}\raggedright\strut
+Zähl-Modell
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.18\columnwidth}\raggedleft\strut
+11
+\strut\end{minipage} &
+\begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+25.01.16
+\strut\end{minipage} &
+\begin{minipage}[t]{0.42\columnwidth}\raggedright\strut
+Anwendungsbeispiele
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.18\columnwidth}\raggedleft\strut
+12
+\strut\end{minipage} &
+\begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+01.02.16
+\strut\end{minipage} &
+\begin{minipage}[t]{0.42\columnwidth}\raggedright\strut
+Wiederholung/Fragestunde
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.18\columnwidth}\raggedleft\strut
+13
+\strut\end{minipage} &
+\begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+08.02.16
+\strut\end{minipage} &
+\begin{minipage}[t]{0.42\columnwidth}\raggedright\strut
+Klausur: Replikation einer Studie
+\strut\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\section{Leistungsnachweis}\label{leistungsnachweis}
+
+KursteilnehmerInnen werden zwei Leistungsnachweise erbringen:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Aufgabenblatt mit Problemstellungen. Zu lösen über die
+  Weihnachtsferien, Abgabefrist: 10.01.16. (Gewicht: 25\%)
+\item
+  Replikation einer veröffentlichten Studie. Datenanalyse als Klausur.
+  (Gewicht: 75\%)
+\end{enumerate}
+
+Die Gesamtnote für den Kurs ergibt sich als gewichtetes Mittel beider
+Teile.
+
+\section{Literatur}\label{literatur}
+
+Der Kurs baut auf Teilen mehrerer Lehrbücher auf, deshalb sind die
+aufgelisteten Werke als Vorschläge für das Selbststudium zu verstehen.
+Notwendiges Material wird über OLAT bereitgestellt. Darüber hinaus
+bietet \R{} eine große und sehr aktive Community, durch die zahllose
+Anleitungen und Hilfestellungen online verfügbar sind.
+
+\begin{itemize}
+\item
+  Nicole Radziwill (2015): Statistics (The Easier Way) With R.
+  \href{http://www.amazon.de/Statistics-Easier-Way-informal-statistics/dp/0692339426/}{{[}Amazon{]}}
+\item
+  Andy Field, Jeremy Miles, Zoe Field (2012): Discovering Statistics
+  Using R.
+  \href{http://www.amazon.de/gp/product/1446200469/}{{[}Amazon{]}}
+\item
+  Peter Dalgaard (2008): Introductory Statistics with R.
+  \href{http://www.amazon.de/Introductory-Statistics-R-Computing/dp/0387790535/}{{[}Amazon{]}}
+\end{itemize}
+
+\section{Software}\label{software}
+
+Im Kurs wird das freie Statistikprogramm \R{} verwendet. Es kann unter
+\href{https://www.r-project.org/}{\url{https://www.r-project.org/}}
+heruntergeladen und installiert werden. Außerdem kommt zur bequemeren
+Anwendung
+\href{https://www.rstudio.com/products/rstudio/download/}{R-Studio} als
+Benutzeroberfläche zum Einsatz. Beide Programme sind für Windows, Mac
+und Linux verfügbar.
+
+
+
+
+\end{document}

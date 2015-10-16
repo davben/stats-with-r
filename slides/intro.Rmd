@@ -1,0 +1,81 @@
+---
+title: "Einführung in die statistische Datenanalyse mit \\R{}"
+subtitle: "Intro"
+author: "David Ben&#x10D;ek"
+date: Wintersemester 2015/16
+navigation-symbol-empty: true
+output:
+  beamer_presentation:
+    colortheme: dolphin
+    fig_caption: no
+    fonttheme: structurebold
+    template: template.tex
+    keep_tex: yes
+---
+
+## Organisatorisches
+
+Termine:
+
+------------------------------------------------------------------------------
+  Sitzung     Datum         Thema
+---------     --------      ------------------------------------
+        1     19.10.15      Ziele quantitativer Forschung, Grundbegriffe der Datenanalyse
+            
+        2     26.10.15      Einführung in \R{} & RStudio, grundlegende Funktionen
+          
+        3     02.11.15      Statistische Grundlagen, Berechnung in \R{}
+            
+        4     09.11.15      Statistische Grundlagen, Berechnung in \R{}
+            
+        5     16.11.15      Deskriptive Statistiken und Datenvisualisierung
+            
+        6     23.11.15      Plots und Datenverarbeitung
+            
+        7     30.11.15      Datenverarbeitung
+-------------------------------------------------------------------------------
+
+Während der Weihnachtspause:
+
+## Organisatorisches II
+
+Termine:
+
+------------------------------------------------------------------------------
+  Sitzung     Datum         Thema
+---------     --------      ------------------------------------            
+        8     07.12.15      Lineare Regression
+            
+        9     11.01.16      Logit-Modell
+            
+       10     18.01.16      Zähl-Modell
+           
+       11     25.01.16      Anwendungsbeispiele
+           
+       12     01.02.16      Wiederholung/Fragestunde
+           
+       13     08.02.16      Klausur: Replikation einer Studie
+-------------------------------------------------------------------------------
+
+## Organisatorisches III
+- Literatur und Folien über OLAT
+
+- Sprechstunde nach Vereinbarung:
+    - david.bencek@ifw-kiel.de
+    
+
+
+## Worum geht es?
+
+
+## Grundbegriffe
+
+
+## Datensatz
+
+
+## Variable
+
+
+## Software
+

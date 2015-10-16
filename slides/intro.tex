@@ -1,0 +1,283 @@
+\documentclass[ignorenonframetext,]{beamer}
+%\usepackage{beamerthemeifw}
+\usecolortheme{dolphin}
+\usefonttheme{structurebold}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{:}
+\setbeamercolor{caption name}{fg=normal text.fg}
+\usepackage{amssymb,amsmath}
+\usepackage{dcolumn, booktabs}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\usepackage{lmodern}
+\ifxetex
+  \usepackage{fontspec,xltxtra,xunicode}
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\else
+  \ifluatex
+    \usepackage{fontspec}
+    \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+    \newcommand{\euro}{€}
+  \else
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+      \fi
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+\usepackage{longtable,booktabs}
+\usepackage{caption}
+% These lines are needed to make table captions work with longtable:
+\makeatletter
+\def\fnum@table{\tablename~\thetable}
+\makeatother
+\usepackage{url}
+
+% Comment these out if you don't want a slide with just the
+% part/section/subsection/subsubsection title:
+\AtBeginPart{
+  \let\insertpartnumber\relax
+  \let\partname\relax
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \let\insertsectionnumber\relax
+  \let\sectionname\relax
+  \frame{\sectionpage}
+}
+\AtBeginSubsection{
+  \let\insertsubsectionnumber\relax
+  \let\subsectionname\relax
+  \frame{\subsectionpage}
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\setcounter{secnumdepth}{0}
+
+\beamertemplatenavigationsymbolsempty
+
+\title{Einführung in die statistische Datenanalyse mit \R{}}
+\subtitle{Intro}
+\author{David Benček
+}
+\institute{}
+
+\date{Wintersemester 2015/16}
+
+
+% custom commands
+\newcommand{\R}{\textsf{R}}
+
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}{Organisatorisches}
+
+Termine:
+
+\begin{longtable}[c]{@{}rll@{}}
+\toprule
+\begin{minipage}[b]{0.18\columnwidth}\raggedleft\strut
+Sitzung
+\strut\end{minipage} &
+\begin{minipage}[b]{0.18\columnwidth}\raggedright\strut
+Datum
+\strut\end{minipage} &
+\begin{minipage}[b]{0.46\columnwidth}\raggedright\strut
+Thema
+\strut\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.18\columnwidth}\raggedleft\strut
+1
+\strut\end{minipage} &
+\begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+19.10.15
+\strut\end{minipage} &
+\begin{minipage}[t]{0.46\columnwidth}\raggedright\strut
+Ziele quantitativer Forschung, Grundbegriffe der Datenanalyse
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.18\columnwidth}\raggedleft\strut
+2
+\strut\end{minipage} &
+\begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+26.10.15
+\strut\end{minipage} &
+\begin{minipage}[t]{0.46\columnwidth}\raggedright\strut
+Einführung in \R{} \& RStudio, grundlegende Funktionen
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.18\columnwidth}\raggedleft\strut
+3
+\strut\end{minipage} &
+\begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+02.11.15
+\strut\end{minipage} &
+\begin{minipage}[t]{0.46\columnwidth}\raggedright\strut
+Statistische Grundlagen, Berechnung in \R{}
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.18\columnwidth}\raggedleft\strut
+4
+\strut\end{minipage} &
+\begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+09.11.15
+\strut\end{minipage} &
+\begin{minipage}[t]{0.46\columnwidth}\raggedright\strut
+Statistische Grundlagen, Berechnung in \R{}
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.18\columnwidth}\raggedleft\strut
+5
+\strut\end{minipage} &
+\begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+16.11.15
+\strut\end{minipage} &
+\begin{minipage}[t]{0.46\columnwidth}\raggedright\strut
+Deskriptive Statistiken und Datenvisualisierung
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.18\columnwidth}\raggedleft\strut
+6
+\strut\end{minipage} &
+\begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+23.11.15
+\strut\end{minipage} &
+\begin{minipage}[t]{0.46\columnwidth}\raggedright\strut
+Plots und Datenverarbeitung
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.18\columnwidth}\raggedleft\strut
+7
+\strut\end{minipage} &
+\begin{minipage}[t]{0.18\columnwidth}\raggedright\strut
+30.11.15
+\strut\end{minipage} &
+\begin{minipage}[t]{0.46\columnwidth}\raggedright\strut
+Datenverarbeitung
+\strut\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\end{frame}
+
+\begin{frame}{Organisatorisches II}
+
+Termine:
+
+\begin{longtable}[c]{@{}rll@{}}
+\toprule
+\begin{minipage}[b]{0.17\columnwidth}\raggedleft\strut
+Sitzung
+\strut\end{minipage} &
+\begin{minipage}[b]{0.17\columnwidth}\raggedright\strut
+Datum
+\strut\end{minipage} &
+\begin{minipage}[b]{0.58\columnwidth}\raggedright\strut
+Thema
+\strut\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.17\columnwidth}\raggedleft\strut
+8
+\strut\end{minipage} &
+\begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
+07.12.15
+\strut\end{minipage} &
+\begin{minipage}[t]{0.58\columnwidth}\raggedright\strut
+Lineare Regression
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.17\columnwidth}\raggedleft\strut
+9
+\strut\end{minipage} &
+\begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
+11.01.16
+\strut\end{minipage} &
+\begin{minipage}[t]{0.58\columnwidth}\raggedright\strut
+Logit-Modell
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.17\columnwidth}\raggedleft\strut
+10
+\strut\end{minipage} &
+\begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
+18.01.16
+\strut\end{minipage} &
+\begin{minipage}[t]{0.58\columnwidth}\raggedright\strut
+Zähl-Modell
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.17\columnwidth}\raggedleft\strut
+11
+\strut\end{minipage} &
+\begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
+25.01.16
+\strut\end{minipage} &
+\begin{minipage}[t]{0.58\columnwidth}\raggedright\strut
+Anwendungsbeispiele
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.17\columnwidth}\raggedleft\strut
+12
+\strut\end{minipage} &
+\begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
+01.02.16
+\strut\end{minipage} &
+\begin{minipage}[t]{0.58\columnwidth}\raggedright\strut
+Wiederholung/Fragestunde
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.17\columnwidth}\raggedleft\strut
+13
+\strut\end{minipage} &
+\begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
+08.02.16
+\strut\end{minipage} &
+\begin{minipage}[t]{0.58\columnwidth}\raggedright\strut
+Klausur: Replikation einer Studie
+\strut\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\end{frame}
+
+\begin{frame}{Organisatorisches III}
+
+\begin{itemize}
+\item
+  Literatur und Folien über OLAT
+\item
+  Sprechstunde nach Vereinbarung:
+
+  \begin{itemize}
+  \itemsep1pt\parskip0pt\parsep0pt
+  \item
+    E-Mail:
+    \href{mailto:david.bencek@ifw-kiel.de}{\nolinkurl{david.bencek@ifw-kiel.de}}
+  \item
+    Tel: 0431 8814 470
+  \item
+    Raum A339, IfW, Kiellinie 66
+  \end{itemize}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Worum geht es?}
+
+\end{frame}
+
+\begin{frame}{Grundbegriffe}
+
+\end{frame}
+
+\begin{frame}{Datensatz}
+
+\end{frame}
+
+\begin{frame}{Variable}
+
+\end{frame}
+
+\begin{frame}{Software}
+
+\end{frame}
+
+\end{document}
