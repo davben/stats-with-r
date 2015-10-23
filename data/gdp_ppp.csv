@@ -1,0 +1,704 @@
+"country","year","gdp"
+"Belgium",1995,18800
+"Bulgaria",1995,4600
+"Czech Republic",1995,11200
+"Denmark",1995,19300
+"Germany",1995,18800
+"Estonia",1995,5300
+"Ireland",1995,15200
+"Greece",1995,11000
+"Spain",1995,13400
+"France",1995,17000
+"Croatia",1995,6700
+"Italy",1995,17800
+"Cyprus",1995,12800
+"Latvia",1995,4600
+"Lithuania",1995,5200
+"Luxembourg",1995,32500
+"Hungary",1995,7500
+"Malta",1995,13000
+"Netherlands",1995,18100
+"Austria",1995,19700
+"Poland",1995,6300
+"Portugal",1995,11300
+"Romania",1995,4800
+"Slovenia",1995,10900
+"Slovakia",1995,7000
+"Finland",1995,15800
+"Sweden",1995,18300
+"United Kingdom",1995,16900
+"Iceland",1995,19500
+"Liechtenstein",1995,NA
+"Norway",1995,19800
+"Switzerland",1995,22900
+"Former Yugoslav Republic of Macedonia",1995,NA
+"Serbia",1995,NA
+"Turkey",1995,4400
+"United States",1995,24100
+"Japan",1995,19200
+"Belgium",1996,19300
+"Bulgaria",1996,3900
+"Czech Republic",1996,12100
+"Denmark",1996,20400
+"Germany",1996,19500
+"Estonia",1996,5800
+"Ireland",1996,16600
+"Greece",1996,11500
+"Spain",1996,14200
+"France",1996,17600
+"Croatia",1996,7600
+"Italy",1996,18600
+"Cyprus",1996,13300
+"Latvia",1996,5000
+"Lithuania",1996,5600
+"Luxembourg",1996,34000
+"Hungary",1996,7900
+"Malta",1996,12600
+"Netherlands",1996,19200
+"Austria",1996,20600
+"Poland",1996,6900
+"Portugal",1996,11900
+"Romania",1996,5100
+"Slovenia",1996,11700
+"Slovakia",1996,7600
+"Finland",1996,16300
+"Sweden",1996,19200
+"United Kingdom",1996,18000
+"Iceland",1996,20500
+"Liechtenstein",1996,NA
+"Norway",1996,22000
+"Switzerland",1996,23700
+"Former Yugoslav Republic of Macedonia",1996,NA
+"Serbia",1996,NA
+"Turkey",1996,4800
+"United States",1996,25400
+"Japan",1996,20200
+"Belgium",1997,20400
+"Bulgaria",1997,4100
+"Czech Republic",1997,12300
+"Denmark",1997,21600
+"Germany",1997,20100
+"Estonia",1997,6800
+"Ireland",1997,18600
+"Greece",1997,12200
+"Spain",1997,15100
+"France",1997,18500
+"Croatia",1997,8200
+"Italy",1997,19400
+"Cyprus",1997,13800
+"Latvia",1997,5600
+"Lithuania",1997,6200
+"Luxembourg",1997,34800
+"Hungary",1997,8500
+"Malta",1997,13500
+"Netherlands",1997,20600
+"Austria",1997,21400
+"Poland",1997,7600
+"Portugal",1997,12700
+"Romania",1997,4700
+"Slovenia",1997,12700
+"Slovakia",1997,8300
+"Finland",1997,17900
+"Sweden",1997,20000
+"United Kingdom",1997,19500
+"Iceland",1997,22300
+"Liechtenstein",1997,NA
+"Norway",1997,23900
+"Switzerland",1997,25000
+"Former Yugoslav Republic of Macedonia",1997,4300
+"Serbia",1997,NA
+"Turkey",1997,5300
+"United States",1997,26900
+"Japan",1997,21000
+"Belgium",1998,20800
+"Bulgaria",1998,4700
+"Czech Republic",1998,12300
+"Denmark",1998,22300
+"Germany",1998,20700
+"Estonia",1998,7200
+"Ireland",1998,20500
+"Greece",1998,12600
+"Spain",1998,16200
+"France",1998,19500
+"Croatia",1998,8600
+"Italy",1998,20400
+"Cyprus",1998,14600
+"Latvia",1998,6200
+"Lithuania",1998,6800
+"Luxembourg",1998,36900
+"Hungary",1998,9100
+"Malta",1998,14100
+"Netherlands",1998,21800
+"Austria",1998,22400
+"Poland",1998,8100
+"Portugal",1998,13400
+"Romania",1998,4500
+"Slovenia",1998,13400
+"Slovakia",1998,8800
+"Finland",1998,19300
+"Sweden",1998,20900
+"United Kingdom",1998,20200
+"Iceland",1998,23800
+"Liechtenstein",1998,NA
+"Norway",1998,23400
+"Switzerland",1998,25800
+"Former Yugoslav Republic of Macedonia",1998,4500
+"Serbia",1998,NA
+"Turkey",1998,7300
+"United States",1998,28100
+"Japan",1998,20800
+"Belgium",1999,21900
+"Bulgaria",1999,4900
+"Czech Republic",1999,12800
+"Denmark",1999,23300
+"Germany",1999,21600
+"Estonia",1999,7600
+"Ireland",1999,22400
+"Greece",1999,13200
+"Spain",1999,17100
+"France",1999,20400
+"Croatia",1999,8600
+"Italy",1999,21000
+"Cyprus",1999,15400
+"Latvia",1999,6400
+"Lithuania",1999,6900
+"Luxembourg",1999,42300
+"Hungary",1999,9500
+"Malta",1999,14900
+"Netherlands",1999,23300
+"Austria",1999,23500
+"Poland",1999,8600
+"Portugal",1999,14500
+"Romania",1999,4700
+"Slovenia",1999,14400
+"Slovakia",1999,9000
+"Finland",1999,20400
+"Sweden",1999,22400
+"United Kingdom",1999,21200
+"Iceland",1999,24700
+"Liechtenstein",1999,NA
+"Norway",1999,25700
+"Switzerland",1999,26400
+"Former Yugoslav Republic of Macedonia",1999,4800
+"Serbia",1999,NA
+"Turkey",1999,7100
+"United States",1999,29900
+"Japan",1999,21200
+"Belgium",2000,24000
+"Bulgaria",2000,5400
+"Czech Republic",2000,13500
+"Denmark",2000,25000
+"Germany",2000,22400
+"Estonia",2000,8600
+"Ireland",2000,25100
+"Greece",2000,16000
+"Spain",2000,18500
+"France",2000,21900
+"Croatia",2000,9500
+"Italy",2000,22300
+"Cyprus",2000,16700
+"Latvia",2000,6900
+"Lithuania",2000,7500
+"Luxembourg",2000,46500
+"Hungary",2000,10300
+"Malta",2000,16500
+"Netherlands",2000,25500
+"Austria",2000,25100
+"Poland",2000,9200
+"Portugal",2000,15400
+"Romania",2000,5000
+"Slovenia",2000,15200
+"Slovakia",2000,9500
+"Finland",2000,22300
+"Sweden",2000,24300
+"United Kingdom",2000,22900
+"Iceland",2000,25000
+"Liechtenstein",2000,NA
+"Norway",2000,31400
+"Switzerland",2000,28100
+"Former Yugoslav Republic of Macedonia",2000,5100
+"Serbia",2000,NA
+"Turkey",2000,8000
+"United States",2000,31600
+"Japan",2000,22500
+"Belgium",2001,24500
+"Bulgaria",2001,5900
+"Czech Republic",2001,14400
+"Denmark",2001,25200
+"Germany",2001,22900
+"Estonia",2001,9200
+"Ireland",2001,26200
+"Greece",2001,17100
+"Spain",2001,19400
+"France",2001,22800
+"Croatia",2001,10000
+"Italy",2001,23400
+"Cyprus",2001,17800
+"Latvia",2001,7600
+"Lithuania",2001,8300
+"Luxembourg",2001,46200
+"Hungary",2001,11500
+"Malta",2001,16100
+"Netherlands",2001,26400
+"Austria",2001,24900
+"Poland",2001,9400
+"Portugal",2001,15900
+"Romania",2001,5500
+"Slovenia",2001,15800
+"Slovakia",2001,10300
+"Finland",2001,22700
+"Sweden",2001,24200
+"United Kingdom",2001,23900
+"Iceland",2001,26100
+"Liechtenstein",2001,NA
+"Norway",2001,31800
+"Switzerland",2001,28300
+"Former Yugoslav Republic of Macedonia",2001,5000
+"Serbia",2001,NA
+"Turkey",2001,7400
+"United States",2001,31900
+"Japan",2001,22700
+"Belgium",2002,25600
+"Bulgaria",2002,6500
+"Czech Republic",2002,15000
+"Denmark",2002,26200
+"Germany",2002,23400
+"Estonia",2002,10200
+"Ireland",2002,28200
+"Greece",2002,18400
+"Spain",2002,20600
+"France",2002,23600
+"Croatia",2002,11100
+"Italy",2002,23000
+"Cyprus",2002,18100
+"Latvia",2002,8400
+"Lithuania",2002,9100
+"Luxembourg",2002,49000
+"Hungary",2002,12500
+"Malta",2002,16800
+"Netherlands",2002,27200
+"Austria",2002,26000
+"Poland",2002,9900
+"Portugal",2002,16300
+"Romania",2002,6000
+"Slovenia",2002,16800
+"Slovakia",2002,11100
+"Finland",2002,23500
+"Sweden",2002,25000
+"United Kingdom",2002,24800
+"Iceland",2002,26500
+"Liechtenstein",2002,NA
+"Norway",2002,31600
+"Switzerland",2002,29300
+"Former Yugoslav Republic of Macedonia",2002,5200
+"Serbia",2002,NA
+"Turkey",2002,7400
+"United States",2002,32500
+"Japan",2002,23200
+"Belgium",2003,25600
+"Bulgaria",2003,6900
+"Czech Republic",2003,15800
+"Denmark",2003,25700
+"Germany",2003,23900
+"Estonia",2003,11300
+"Ireland",2003,29300
+"Greece",2003,19200
+"Spain",2003,20900
+"France",2003,23000
+"Croatia",2003,11700
+"Italy",2003,23000
+"Cyprus",2003,18300
+"Latvia",2003,9100
+"Lithuania",2003,10300
+"Luxembourg",2003,51100
+"Hungary",2003,12900
+"Malta",2003,17000
+"Netherlands",2003,26700
+"Austria",2003,26400
+"Poland",2003,10100
+"Portugal",2003,16400
+"Romania",2003,6500
+"Slovenia",2003,17300
+"Slovakia",2003,11500
+"Finland",2003,23300
+"Sweden",2003,25700
+"United Kingdom",2003,25400
+"Iceland",2003,26000
+"Liechtenstein",2003,NA
+"Norway",2003,32300
+"Switzerland",2003,28900
+"Former Yugoslav Republic of Macedonia",2003,5400
+"Serbia",2003,NA
+"Turkey",2003,7400
+"United States",2003,33400
+"Japan",2003,23600
+"Belgium",2004,26200
+"Bulgaria",2004,7500
+"Czech Republic",2004,16900
+"Denmark",2004,27100
+"Germany",2004,25000
+"Estonia",2004,12400
+"Ireland",2004,30800
+"Greece",2004,20300
+"Spain",2004,21900
+"France",2004,23700
+"Croatia",2004,12500
+"Italy",2004,23100
+"Cyprus",2004,19600
+"Latvia",2004,10100
+"Lithuania",2004,11100
+"Luxembourg",2004,54500
+"Hungary",2004,13600
+"Malta",2004,17200
+"Netherlands",2004,27900
+"Austria",2004,27600
+"Poland",2004,10900
+"Portugal",2004,16700
+"Romania",2004,7500
+"Slovenia",2004,18700
+"Slovakia",2004,12300
+"Finland",2004,25100
+"Sweden",2004,27300
+"United Kingdom",2004,26900
+"Iceland",2004,28400
+"Liechtenstein",2004,NA
+"Norway",2004,35700
+"Switzerland",2004,29900
+"Former Yugoslav Republic of Macedonia",2004,5900
+"Serbia",2004,NA
+"Turkey",2004,8500
+"United States",2004,35200
+"Japan",2004,24700
+"Belgium",2005,26900
+"Bulgaria",2005,8200
+"Czech Republic",2005,17800
+"Denmark",2005,27700
+"Germany",2005,26000
+"Estonia",2005,13800
+"Ireland",2005,32400
+"Greece",2005,20400
+"Spain",2005,22900
+"France",2005,24700
+"Croatia",2005,13200
+"Italy",2005,23600
+"Cyprus",2005,20800
+"Latvia",2005,11100
+"Lithuania",2005,12300
+"Luxembourg",2005,57000
+"Hungary",2005,14200
+"Malta",2005,18000
+"Netherlands",2005,29300
+"Austria",2005,28100
+"Poland",2005,11500
+"Portugal",2005,17900
+"Romania",2005,8000
+"Slovenia",2005,19600
+"Slovakia",2005,13500
+"Finland",2005,25700
+"Sweden",2005,27300
+"United Kingdom",2005,27800
+"Iceland",2005,29200
+"Liechtenstein",2005,NA
+"Norway",2005,39800
+"Switzerland",2005,30600
+"Former Yugoslav Republic of Macedonia",2005,6600
+"Serbia",2005,7100
+"Turkey",2005,9500
+"United States",2005,37000
+"Japan",2005,25400
+"Belgium",2006,27800
+"Bulgaria",2006,9000
+"Czech Republic",2006,18900
+"Denmark",2006,29300
+"Germany",2006,27300
+"Estonia",2006,15600
+"Ireland",2006,34400
+"Greece",2006,21800
+"Spain",2006,24800
+"France",2006,25500
+"Croatia",2006,14100
+"Italy",2006,24700
+"Cyprus",2006,22000
+"Latvia",2006,12500
+"Lithuania",2006,13600
+"Luxembourg",2006,63800
+"Hungary",2006,14900
+"Malta",2006,18600
+"Netherlands",2006,31000
+"Austria",2006,29700
+"Poland",2006,12300
+"Portugal",2006,18700
+"Romania",2006,9200
+"Slovenia",2006,20700
+"Slovakia",2006,14900
+"Finland",2006,26900
+"Sweden",2006,29000
+"United Kingdom",2006,28900
+"Iceland",2006,29100
+"Liechtenstein",2006,NA
+"Norway",2006,43800
+"Switzerland",2006,32900
+"Former Yugoslav Republic of Macedonia",2006,7100
+"Serbia",2006,7700
+"Turkey",2006,10500
+"United States",2006,37700
+"Japan",2006,25800
+"Belgium",2007,28900
+"Bulgaria",2007,10000
+"Czech Republic",2007,20600
+"Denmark",2007,30600
+"Germany",2007,28800
+"Estonia",2007,17500
+"Ireland",2007,36500
+"Greece",2007,22600
+"Spain",2007,26200
+"France",2007,26900
+"Croatia",2007,15600
+"Italy",2007,26000
+"Cyprus",2007,23500
+"Latvia",2007,14300
+"Lithuania",2007,15500
+"Luxembourg",2007,68400
+"Hungary",2007,15300
+"Malta",2007,19600
+"Netherlands",2007,33000
+"Austria",2007,30900
+"Poland",2007,13600
+"Portugal",2007,19600
+"Romania",2007,10700
+"Slovenia",2007,22100
+"Slovakia",2007,16900
+"Finland",2007,29300
+"Sweden",2007,31200
+"United Kingdom",2007,29400
+"Iceland",2007,30100
+"Liechtenstein",2007,NA
+"Norway",2007,45300
+"Switzerland",2007,35900
+"Former Yugoslav Republic of Macedonia",2007,7700
+"Serbia",2007,8200
+"Turkey",2007,11300
+"United States",2007,38900
+"Japan",2007,27100
+"Belgium",2008,28900
+"Bulgaria",2008,10900
+"Czech Republic",2008,20200
+"Denmark",2008,31100
+"Germany",2008,29000
+"Estonia",2008,17200
+"Ireland",2008,32900
+"Greece",2008,23200
+"Spain",2008,25900
+"France",2008,26700
+"Croatia",2008,16200
+"Italy",2008,26000
+"Cyprus",2008,24800
+"Latvia",2008,14600
+"Lithuania",2008,16100
+"Luxembourg",2008,65800
+"Hungary",2008,15900
+"Malta",2008,20300
+"Netherlands",2008,33500
+"Austria",2008,31100
+"Poland",2008,14100
+"Portugal",2008,19500
+"Romania",2008,12200
+"Slovenia",2008,22700
+"Slovakia",2008,18100
+"Finland",2008,29700
+"Sweden",2008,30900
+"United Kingdom",2008,28600
+"Iceland",2008,30800
+"Liechtenstein",2008,NA
+"Norway",2008,47900
+"Switzerland",2008,37100
+"Former Yugoslav Republic of Macedonia",2008,8400
+"Serbia",2008,9000
+"Turkey",2008,11700
+"United States",2008,37700
+"Japan",2008,26200
+"Belgium",2009,27600
+"Bulgaria",2009,10300
+"Czech Republic",2009,19400
+"Denmark",2009,28900
+"Germany",2009,26900
+"Estonia",2009,14900
+"Ireland",2009,30100
+"Greece",2009,22300
+"Spain",2009,24200
+"France",2009,25500
+"Croatia",2009,14900
+"Italy",2009,24300
+"Cyprus",2009,23400
+"Latvia",2009,12700
+"Lithuania",2009,13600
+"Luxembourg",2009,59200
+"Hungary",2009,15300
+"Malta",2009,19800
+"Netherlands",2009,31000
+"Austria",2009,29500
+"Poland",2009,14200
+"Portugal",2009,18800
+"Romania",2009,11700
+"Slovenia",2009,20200
+"Slovakia",2009,17000
+"Finland",2009,26900
+"Sweden",2009,28200
+"United Kingdom",2009,26300
+"Iceland",2009,28200
+"Liechtenstein",2009,NA
+"Norway",2009,41400
+"Switzerland",2009,35200
+"Former Yugoslav Republic of Macedonia",2009,8500
+"Serbia",2009,8400
+"Turkey",2009,10900
+"United States",2009,35100
+"Japan",2009,24000
+"Belgium",2010,29400
+"Bulgaria",2010,10800
+"Czech Republic",2010,19700
+"Denmark",2010,31200
+"Germany",2010,29200
+"Estonia",2010,15800
+"Ireland",2010,31400
+"Greece",2010,21600
+"Spain",2010,24200
+"France",2010,26600
+"Croatia",2010,14700
+"Italy",2010,25100
+"Cyprus",2010,23600
+"Latvia",2010,13500
+"Lithuania",2010,15100
+"Luxembourg",2010,64000
+"Hungary",2010,16100
+"Malta",2010,21300
+"Netherlands",2010,31700
+"Austria",2010,30900
+"Poland",2010,15400
+"Portugal",2010,19600
+"Romania",2010,12400
+"Slovenia",2010,20600
+"Slovakia",2010,18100
+"Finland",2010,27900
+"Sweden",2010,30200
+"United Kingdom",2010,26300
+"Iceland",2010,27900
+"Liechtenstein",2010,NA
+"Norway",2010,44000
+"Switzerland",2010,37200
+"Former Yugoslav Republic of Macedonia",2010,8900
+"Serbia",2010,8500
+"Turkey",2010,12200
+"United States",2010,36800
+"Japan",2010,25700
+"Belgium",2011,30200
+"Bulgaria",2011,11700
+"Czech Republic",2011,20300
+"Denmark",2011,31500
+"Germany",2011,30800
+"Estonia",2011,17300
+"Ireland",2011,32300
+"Greece",2011,20300
+"Spain",2011,24300
+"France",2011,27400
+"Croatia",2011,15200
+"Italy",2011,25500
+"Cyprus",2011,23500
+"Latvia",2011,15000
+"Lithuania",2011,16900
+"Luxembourg",2011,66700
+"Hungary",2011,16900
+"Malta",2011,21600
+"Netherlands",2011,32500
+"Austria",2011,32300
+"Poland",2011,16400
+"Portugal",2011,19300
+"Romania",2011,12900
+"Slovenia",2011,21200
+"Slovakia",2011,18900
+"Finland",2011,29100
+"Sweden",2011,31400
+"United Kingdom",2011,26400
+"Iceland",2011,28700
+"Liechtenstein",2011,NA
+"Norway",2011,46600
+"Switzerland",2011,38800
+"Former Yugoslav Republic of Macedonia",2011,9000
+"Serbia",2011,8900
+"Turkey",2011,13400
+"United States",2011,37400
+"Japan",2011,25800
+"Belgium",2012,30700
+"Bulgaria",2012,12100
+"Czech Republic",2012,20700
+"Denmark",2012,32100
+"Germany",2012,31500
+"Estonia",2012,18300
+"Ireland",2012,32900
+"Greece",2012,19500
+"Spain",2012,24400
+"France",2012,27700
+"Croatia",2012,15600
+"Italy",2012,25600
+"Cyprus",2012,23400
+"Latvia",2012,16400
+"Lithuania",2012,18300
+"Luxembourg",2012,67100
+"Hungary",2012,17000
+"Malta",2012,22100
+"Netherlands",2012,32500
+"Austria",2012,33100
+"Poland",2012,17100
+"Portugal",2012,19400
+"Romania",2012,13600
+"Slovenia",2012,21400
+"Slovakia",2012,19400
+"Finland",2012,29400
+"Sweden",2012,32200
+"United Kingdom",2012,26600
+"Iceland",2012,29400
+"Liechtenstein",2012,NA
+"Norway",2012,49700
+"Switzerland",2012,40300
+"Former Yugoslav Republic of Macedonia",2012,NA
+"Serbia",2012,9000
+"Turkey",2012,NA
+"United States",2012,39400
+"Japan",2012,NA
+"Belgium",2013,30500
+"Bulgaria",2013,12000
+"Czech Republic",2013,20600
+"Denmark",2013,32100
+"Germany",2013,32000
+"Estonia",2013,18800
+"Ireland",2013,32500
+"Greece",2013,NA
+"Spain",2013,24500
+"France",2013,27800
+"Croatia",2013,15600
+"Italy",2013,25200
+"Cyprus",2013,22100
+"Latvia",2013,17300
+"Lithuania",2013,19100
+"Luxembourg",2013,67900
+"Hungary",2013,17200
+"Malta",2013,22700
+"Netherlands",2013,32600
+"Austria",2013,33200
+"Poland",2013,17500
+"Portugal",2013,19400
+"Romania",2013,13900
+"Slovenia",2013,21300
+"Slovakia",2013,19600
+"Finland",2013,28700
+"Sweden",2013,32700
+"United Kingdom",2013,27200
+"Iceland",2013,30000
+"Liechtenstein",2013,NA
+"Norway",2013,49200
+"Switzerland",2013,40600
+"Former Yugoslav Republic of Macedonia",2013,NA
+"Serbia",2013,NA
+"Turkey",2013,NA
+"United States",2013,39800
+"Japan",2013,NA
