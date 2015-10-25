@@ -1,0 +1,243 @@
+---
+title: "Einführung in die statistische Datenanalyse mit \\R{}"
+subtitle: "Grundbegriffe und erste Schritte"
+author: "David Ben&#x10D;ek"
+date: Wintersemester 2015/16
+navigation-symbol-empty: true
+output:
+  beamer_presentation:
+    colortheme: dolphin
+    fig_caption: no
+    fonttheme: structurebold
+    template: template.tex
+    keep_tex: yes
+---
+```{r setup, include=FALSE}
+knitr::opts_knit$set(root.dir = "../")
+library(ggplot2)
+library(texreg)
+library(stats)
+library(dotwhisker)
+```
+
+# Kurze Wiederholung
+
+## Warum analysieren wir Daten?
+
+  - Beantwortung wissenschaftlicher Fragestellungen
+  - Unterstützung von Hypothesen
+  - Entwicklung von Theorien/Modellen
+
+## Weshalb benötigen wir spezielle Analyseprogramme?
+
+  - Professionalisierung traditioneller empirischer Forschung
+  - Transparenz der Forschung (**Replizierbarkeit**)
+  - Effizienter Umgang mit Daten
+  
+# Lernziele
+
+- Gezielte Verarbeitung von Daten
+- Zusammenführen unterschiedlicher Quellen
+- Analyse von Daten gemäß einer Fragestellung
+- Kommunizieren und visualisieren der Erkenntnisse
+- Beispiele
+    - Übersichtstabellen von Daten
+    - Deskriptive Statistiken
+    - Regressionstabellen
+    - Abbildungen
+    
+# Beispiele I
+```{r, echo=FALSE}
+load("./data/example.Rdata")
+columns <- c("key", "pop_gesamt","arbeitslosenquote_gesamt", "schulabschluss_gesamt", "pop_ab75")
+table <- example[1:8, columns]
+knitr::kable(table, col.names = c("Kreis", "Einwohner", "AL-Quote", "Schulabschlüsse", "Einwohner_75+"),
+             caption = "Datenauszug")
+```
+
+# Beispiele II
+```{r example_ggplot, echo=FALSE, warning=FALSE}
+ggplot(data = example, aes(schulabschluss_gesamt/pop_gesamt*1000, arbeitslosenquote_gesamt, colour=pop_ab75/pop_gesamt)) +
+  geom_point() + 
+  geom_smooth(method="lm") +
+  scale_color_continuous(name="Altenanteil (75+)") +
+  scale_x_continuous(name="Schulabschlüsse je 1000 Einwohner") +
+  scale_y_continuous(name="AL-Quote")
+```
+
+# Beispiel III
+```{r, echo=FALSE}
+## regression
+load("./data/crime_data.Rdata")
+summary(cdata[, c(3,8,9)])
+```
+
+# Beispiel IV(a)
+```{r, echo=FALSE}
+summary(ols <- lm(crime ~ poverty + single, data = cdata))
+```
+
+# Beispiel IV(b)
+```{r regression_table, echo=FALSE, results='asis'}
+texreg(ols, caption.above = TRUE)
+```
+
+# Beispiel IV(c)
+```{r, echo=FALSE, message=FALSE}
+dwplot(ols) +
+  geom_vline(xintercept=0, linetype="dashed")
+```
+
+
+# Variablen
+- Variablen sind "Veränderliche"
+- variieren je nach Analyseeinheit z.B. zwischen 
+    - einzelnen Personen, 
+    - unterschiedlichen Orten oder 
+    - Zeitpunkten
+
+Beispiele?
+
+
+# Abhängige und unabhängige Variable
+
+Eine wissenschaftliche Fragestellung enthält immer etwas, das Sie erklären möchten, und etwas, das Sie zu Erklärung anbieten.
+
+$\Rightarrow$ Wirkung hervorgerufen durch einen Ursache
+
+$$ y_i = a + b x_i + e_i $$
+
+Häufige Bezeichnungen:
+
+$y_i$                 $x_i$
+-------------------   --------------------
+abhängige Variable    unabhängige Variable
+erklärte Variable     erklärende Variable
+endogene Variable     exogene Variable
+Regressand            Regressor
+
+
+# Variablentypen
+
+Je nach Messkonzept nutzen wir unterschiedliche Variablentypen (in R):
+
+Typ                 Beschreibung
+--------------      ----------------------------------------
+binary              0/1; positiv/negativ; ja/nein
+integer             diskrete Skala: 1--10
+numeric             stetige Skala (inkl. Zwischenwerten)
+factor (unordered)  Kategorien: SPD/CDU/Grüne
+factor (ordered)    geordnete Kategorien: kalt/lauwarm/heiß
+character           Text
+Date                Datum: "2015-10-26"
+
+
+# integer
+```{r, echo=FALSE}
+plot(dbinom(0:10, size=10, prob=0.5), type="h", lwd=2)
+```
+
+# numeric
+```{r, echo=FALSE}
+plot(dnorm(seq(0,10, length=100), mean=5, sd=2), type="l", lwd=2)
+```
+
+# Datenstrukturen
+
+Struktur          Eigenschaft
+---------------   --------------
+**vector**        homogen
+matrix            homogen
+array             homogen
+list              heterogen
+**data frame**    heterogen
+---------------   -----------
+
+# Daten einlesen
+
+```{r, eval=FALSE, tidy=TRUE}
+gdp <- read.csv(file= "https://github.com/davben/
+                stats-with-r/tree/master/data/gdp_ppp.csv")
+```
+
+Zahlreiche weitere Befehle, abhängig vom Dateityp der Datenquelle!
+
+Im Optimalfall: **Rdata-files**
+
+
+# Daten begutachten
+```{r, eval = FALSE}
+load(file = "./data/gdp_deu.csv")
+
+head(gdp_deu)
+tail(gdp_deu)
+
+str(gdp_deu)
+dim(gdp_deu)
+summary(gdp_deu)
+
+table(gdp$country)
+
+```
+
+
+# Style Guide
+
+- aussagekräftige Namen von Objekten
+- einheitliche Bezeichnung (R unterscheidet "Objekt" von "objekt"!)
+- einheitliche Schreibweise (gdp_deu, gdp.deu, gdpDeu)
+- Kommentare im Code! Sie sollten in zwei Monaten noch in der Lage sein, Ihren Code zu verstehen.
+- saubere Formatierung, um Code übersichtlich zu halten.
+
+Zum Nachlesen: [http://adv-r.had.co.nz/Style.html](http://adv-r.had.co.nz/Style.html)
+
+# Erste Grafiken
+```{r, tidy=TRUE}
+load("./data/gdp_deu.Rdata")
+plot(gdp_deu$year, gdp_deu$gdp)
+lines(gdp_deu$year, gdp_deu$gdp)
+```
+
+# Erste Grafiken II
+```{r, tidy=TRUE}
+plot(gdp_deu$year, gdp_deu$gdp, type = "l", lty = 2)
+```
+
+# Erste Grafiken III
+```{r}
+load("./data/gdp_growth.Rdata")
+plot(gdp_growth$year, gdp_growth$growth, xlab = "Jahr", 
+     ylab = "Wachstumsrate")
+```
+
+# Erste Grafiken IV(a)
+```{r eval=FALSE}
+# nur Deutschland
+plot(gdp_growth[gdp_growth$country == "Germany", ]$year, 
+     gdp_growth[gdp_growth$country == "Germany", ]$growth, 
+     xlab = "Jahr", 
+     ylab = "Wachstumsrate", 
+     main = "Deutschland")
+```
+
+# Erste Grafiken IV(b)
+```{r echo=FALSE}
+# nur Deutschland
+plot(gdp_growth[gdp_growth$country == "Germany", ]$year, 
+     gdp_growth[gdp_growth$country == "Germany", ]$growth, 
+     xlab = "Jahr", 
+     ylab = "Wachstumsrate", 
+     main = "Deutschland")
+```
+
+# Erste Grafiken V
+```{r}
+# Verteilung
+hist(gdp_growth$gdp, breaks=30)
+```
+
+# Erste Grafiken VI
+```{r}
+hist(gdp_growth$growth, breaks=30)
+```
+
