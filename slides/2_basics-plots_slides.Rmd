@@ -1,0 +1,21 @@
+---
+title: "Einführung in die statistische Datenanalyse mit \\R{}"
+subtitle: "Daten einlesen, erste Plots, Berechnungen"
+author: "David Ben&#x10D;ek"
+date: Wintersemester 2015/16
+navigation-symbol-empty: true
+output:
+  beamer_presentation:
+    colortheme: dolphin
+    fig_caption: no
+    fonttheme: structurebold
+    template: template.tex
+    keep_tex: yes
+---
+
+# To Do
+
+- kurze Wiederholung: Objekte
+- Daten einlesen
+- Plots: base und ggplot2
+- erste Berechnungen/statistische Modelle

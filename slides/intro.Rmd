@@ -10,7 +10,7 @@ output:
     fig_caption: no
     fonttheme: structurebold
     template: template.tex
-    keep_tex: yes
+    keep_tex: no
 ---
 
 
