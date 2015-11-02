@@ -5,3 +5,6 @@
 *.Rproj
 content/
 WS_15-16/
+vignettes/*.Rmd
+vignettes/*.tex
+notes/
