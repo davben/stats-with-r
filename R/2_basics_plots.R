@@ -1,24 +1,28 @@
 ## Wie lese ich Daten ein?
 
-gdp <- read.csv(file = "./data/gdp_ppp.csv", 
+gdp <- read.csv("https://raw.githubusercontent.com/davben/stats-with-r/master/data/gdp_ppp.csv",
                 stringsAsFactors = FALSE)
 # online-Pfad: "https://raw.githubusercontent.com/davben/stats-with-r/master/data/gdp_ppp.csv"
-
+save(gdp, file="./gdp_example.Rdata")
 ## Optimal: Rdata-files
 load(file = "./data/gdp_ppp.Rdata")
 
 
 ## Auch möglich: xlsx-Dateien
+install.packages("xlsx")
 library(xlsx) # Durch das Laden eines Pakets erhalten wir zusätzliche Funktionen
-gdp_xlsx <- read.xlsx("file", sheet)
+gdp_xlsx <- read.xlsx(file = "./data/gdp_growth.xlsx", sheetIndex = 1) #, colIndex = 2:5)
 
 
 # Vokabeln zum Begutachten von Daten:
-head(gdp)
+head(gdp, 10)
+
 tail(gdp)
 
 str(gdp)
+
 dim(gdp)
+
 summary(gdp)
 
 table(gdp$country)
@@ -26,7 +30,13 @@ table(gdp$country)
 
 ## Erste Grafiken mit Base Plot
 
-plot(gdp$year, gdp$gdp)
+plot(x = gdp$year, y = gdp$gdp)
+
+auswahl <- c("Belgium", "Germany", "France", "Denmark")
+
+gdp_auswahl <- gdp[gdp$country %in% auswahl, ]
+
+plot(x = gdp_auswahl$year, y = gdp_auswahl$gdp, type = "l")
 
 # Deutschland, absolute Zahlen
 load("./data/gdp_deu.Rdata")
@@ -49,13 +59,12 @@ hist(gdp_growth$growth, breaks=30)
 ## Bessere Grafiken mit ggplot2
 library(ggplot2)
 
-ggplot(data = gdp_deu, aes(x = year, y = gdp)) +
-  geom_point() +
-  geom_line()
+ggplot(data = gdp_auswahl, aes(x = year, y = gdp, colour=country)) +
+  geom_bar(stat="identity")
 
 gdp_sample <- gdp[gdp$country %in% c("Denmark", "France", "Germany", "Netherlands"), ]
 
-ggplot(data = gdp_sample, aes(x = year, y = gdp, colour = country)) +
+ggplot(data = gdp_sample, aes(x = year, y = gdp, colour = factor(country))) +
   geom_point() +
   geom_line() +
   scale_color_discrete(name = "Country")
@@ -113,7 +122,7 @@ ggplot(data = gdp_growth, aes(year, growth)) +
 
 mean(gdp_growth$growth, na.rm = TRUE)
 
-gdp_growth$mean <- mean(gdp_growth$growth, na.rm = TRUE)
+gdp_growth$mittelwert <- mean(gdp_growth$growth, na.rm = TRUE)
 
 gdp_growth$sum_error <- gdp_growth$growth - gdp_growth$mean
 
