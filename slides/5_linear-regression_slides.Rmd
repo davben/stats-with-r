@@ -1,0 +1,169 @@
+---
+title: "Einführung in die statistische Datenanalyse mit \\R{}"
+subtitle: "Lineare Regression"
+author: "David Ben&#x10D;ek"
+date: Wintersemester 2015/16
+navigation-symbol-empty: true
+output:
+  beamer_presentation:
+    colortheme: dolphin
+    fig_caption: no
+    fonttheme: structurebold
+    template: template.tex
+    keep_tex: yes
+---
+
+```{r, include=FALSE}
+knitr::opts_knit$set(root.dir = "../")
+library(ggplot2)
+```
+
+# Wann verwenden wir eine lineare Regression?
+
+Eine Regressionsanalyse hilft uns, die Beziehung einer
+
+- **abhängigen Variable** $Y$ und
+- einer oder mehreren **unabhängigen Variablen** $X_1, X_2, ..., X_p$
+
+zu erklären.
+
+- Wenn $p=1$, sprechen wir von einer *einfachen Regression*,
+- bei $p>1$ von einer *multivariaten Regression*.
+
+
+# Variable
+
+## Abhängige Variable
+Die abhängige Variable $Y$ muss eine stetige Variable sein.
+
+## Unabhängige Variable
+Die unabhängigen Variablen $X_1, ..., X_p$ können stetige, diskrete oder kategoriale Variablen sein.
+
+
+# Erste Schritte
+
+Vor jeder formalen Analyse sollten die Daten näher begutachtet werden:
+
+- Fehler
+- fehlende Werte
+- Ausreißer
+- unerwartete Verteilung einzelner Variablen
+- unerwartete Muster
+
+
+# Erste Schritte II
+
+Sehen die Daten aus wie wir es erwarten?
+
+- Numerische Begutachtung:
+```{r, eval=FALSE}
+head(x)
+summary(x)
+cor(x, y)
+```
+- Grafische Begutachtung:
+```{r, eval=FALSE}
+plot(x, y)
+hist(x)
+boxplot(x)
+```
+
+# Statistisches Modell
+
+## Mittelwert
+```{r, echo=FALSE}
+lacina <- read.csv("./data/lacina/lacina.csv", stringsAsFactors = FALSE)
+ggplot(lacina, aes(begin, lnbdb)) +
+  geom_point()
+```
+
+# Statistisches Modell
+
+## Mittelwert
+```{r, echo=FALSE}
+ggplot(lacina, aes(begin, lnbdb)) +
+  geom_point() +
+  geom_hline(yintercept = mean(lacina$lnbdb, na.rm = TRUE), colour = "red")
+  #geom_smooth(method="lm")
+```
+
+# Statistisches Modell
+
+## Mittelwert
+Wie gut erklärt der Mittelwert $\bar{x}$ die Beobachtungen?
+
+$\rightarrow$ Gütemaß notwendig!
+
+## Varianz
+
+$$s^2 = \frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2$$
+
+
+# Lineare Regression mit einer Variable
+
+Ziel: Abhängige Variable durch Zusammenhang mit einer unabhängigen Variable erklären.
+
+## Variable
+- $Y$: Konfliktintensität, gemessen als Anzahl der Toten.
+- $X$: Dauer des Konflikts, gemessen in Jahren.
+
+Im Datensatz haben wir Paare von Beobachtungen:
+$$(x_1, y_1), (x_2, y_2), ..., (x_{114}, y_{114})$$
+
+# Lineare Regression mit einer Variable (Plot)
+```{r, echo=FALSE}
+ggplot(lacina, aes(lnduration, lnbdb)) +
+  geom_point() +
+  geom_smooth(method="lm", se=FALSE)
+```
+
+
+# Lineare Regression mit einer Variable (Modell)
+
+Regressionsgleichung:
+$$ y_i = \beta_0 + \beta_1 x_i + \epsilon_i $$
+
+dabei gilt:
+
+ - Fehlerterm $\epsilon_i$, normalverteilt mit Erwartungswert 0 und unabhängig.
+ - Lineare Funktion: $\beta_0 + \beta_1 x_i = E(Y|X=x_i)$
+
+## Unbekannte Paramter
+- $\beta_0$ (Achsenabschnitt)
+- $\beta_1$ (Steigung)
+
+# Schätzung der unbekannten Parameter
+Ziel: Finde eine lineare Gleichung, die möglichst gut zu den Daten passt. 
+
+$\Rightarrow$ "Fitted Values" von $y_i$, gegeben durch
+$$ \hat y_i = b_0 + b_1 x_i $$
+sollen so nah wie möglich an den beobachteten Werten $y_i$ liegen.
+
+## Residuen
+Residuen zeigen an, wie groß der Unterschied zwischen Beobachtung und "fitted value" ist:
+$$e_i = y_i - \hat y_i$$
+
+
+# Schätzung der unbekannten Parameter
+
+## Methode der kleinsten Quadrate
+Schätzung der Parameter $b_0$ und $b_1$ durch Minimierung der Summe quadrierter Residuen (residual sum of squares ($RSS$)):
+\begin{align*}
+RSS &= \sum_{i=1}^{n} e_i^2 \\
+    &= \sum_{i=1}^{n} (y_i - \hat y_i)^2 \\
+    &= \sum_{i=1}^{n} (y_i - b_0 - b_1 x_i)^2
+\end{align*}
+
+# Schätzung in R
+```{r eval=FALSE}
+lacina_one <- lm(lnbdb ~ lnduration, data = lacina)
+summary(lacina_one)
+```
+
+
+# Output
+\small
+```{r echo=FALSE}
+lacina_one <- lm(lnbdb ~ lnduration, data = lacina)
+summary(lacina_one)
+```
