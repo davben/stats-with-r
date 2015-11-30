@@ -83,6 +83,18 @@ summary(lacina_one)$r.squared
 # Vorsicht!
 Nicht einfach nur $R^2$ maximieren! Annahmen beachten!
 
+# Anscombe Quartett
+
+```{r, echo=FALSE}
+library(Tmisc)
+data(quartet)
+p <- ggplot(quartet, aes(x, y)) + geom_point() + 
+  geom_smooth(method = lm, se = FALSE) + 
+  facet_wrap(~set)
+print(p)
+```
+
+
 # Multiple Regression
 
 - Bisher: $$ y_i = \beta_0 + \beta_1 x_i + \epsilon_i $$
