@@ -1,0 +1,86 @@
+---
+title: "Einführung in die statistische Datenanalyse mit \\R{}"
+subtitle: "Logistische Regression"
+author: "David Ben&#x10D;ek"
+date: Wintersemester 2015/16
+navigation-symbol-empty: true
+output:
+  beamer_presentation:
+    colortheme: dolphin
+    fig_caption: no
+    fonttheme: structurebold
+    template: template.tex
+    keep_tex: no
+---
+
+```{r, include=FALSE}
+knitr::opts_knit$set(root.dir = "../")
+library(ggplot2)
+```
+
+# Logistische Regression
+
+ - auch **logit-Modell** genannt,
+ - nützlich für Fragestellungen, bei denen die abhängige Variable nur zwei Werte annahmen kann (dichotome Variable).
+ 
+## Beispiele:
+ 
+  - Wahlbeteiligung von Individuen
+  - Wahlsieg von Kandidaten
+  - Erfolg einer Studienplatzbewerbung
+  
+# Demonstration
+
+Beispielhafte Berechnung eines logit-Modells zur Frage, welche Größen sich auf eine erfolgreiche Studienplatzbewerbung auswirken.
+
+```{r}
+logit_data <- read.csv("./data/logit_example.csv")
+
+head(logit_data)
+```
+
+
+# Demonstration II
+```{r}
+summary(logit_data)
+```
+
+# Demonstration III
+Modellschätzung:
+```{r}
+logit_data$rank <- factor(logit_data$rank)
+logit_model <- glm(admit ~ gre + gpa + rank, data = logit_data, family = "binomial")
+```
+
+# Demonstration IV
+\tiny
+```{r}
+summary(logit_model)
+```
+
+
+# Exkurs: Odds-Ratio
+
+```{r, echo=FALSE}
+knitr::kable(data.frame(erkrankt = c(65, 20), `nicht erkrankt`=c(30, 75), row.names = c("mit Risikofaktor","ohne Risikofaktor")))
+```
+
+
+$$\text{OR} = \frac{65/30}{20/75} = 8.125 $$
+
+Personen mit Risikofaktor haben eine über 8-mal höhere Chance zu erkranken.
+
+# Interpretation
+
+  - Bei einer Änderung von `gre` um eine Einheit steigt die log-odds der Zulassung um 0.002 an.
+  - Ein Anstieg des `gpa` um eine Einheit erhöht die log-odds der Zulassung um 0.804.
+  - Kategoriale Variablen sind relativ zu ihrer Basiskategorie zu interpretieren:
+      - Ist die vorherige Hochschule dem Rang 2 zuzuordnen, ändert dies die log-odds der Zulassung um -0.675 im Vergleich zu einer identischen Bewerbung von einer Hochschule vom Rang 1.
+      
+Mehr zur Interpretation: [http://www.ats.ucla.edu/stat/mult_pkg/faq/general/odds_ratio.htm](http://www.ats.ucla.edu/stat/mult_pkg/faq/general/odds_ratio.htm)
+      
+# Umwandlung von log-odds zu odds
+```{r}
+exp(coef(logit_model))
+```
+
