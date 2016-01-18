@@ -113,8 +113,8 @@ min(descriptive_stats_df$location, na.rm = TRUE)
 max(descriptive_stats_df$location, na.rm = TRUE)
 
 # for all:
-Observations <- sapply(descriptive_stats_df, function(x){
-  sum(!is.na(x))
+Observations <- sapply(descriptive_stats_df, function(abc){
+  sum(!is.na(abc))
 })
 
 Mean <- sapply(descriptive_stats_df, function(x){
@@ -137,6 +137,7 @@ Max <- sapply(descriptive_stats_df, function(x){
 # 3b ----------------------------------------------------------------------
 table_1 <- data.frame(Observations, Mean, SD, Min, Max)
 table_1 <- round(table_1, 2)
+
 
 # Aufgabe 4 ---------------------------------------------------------------
 
