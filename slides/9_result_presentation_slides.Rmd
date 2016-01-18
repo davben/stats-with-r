@@ -141,7 +141,13 @@ dwplot(list(model_1, model_2),  alpha=0.05) +
 ```
 
 
+# Hinweise für gute Grafiken
 
+- Rob Hyndman: "Twenty rules for good graphics" (http://robjhyndman.com/hyndsight/graphics/)
+
+- Edward Tufte: "The Visual Display of Quantitative Information" (http://www.amazon.com/dp/0961392142/)
+
+- William Cleveland: "The Elements of Graphing Data" (http://www.amazon.com/dp/0963488414/)
 
 <!---
 # R Markdown: Replizierbare Dokumente und Präsentationen
