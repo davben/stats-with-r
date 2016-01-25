@@ -1,8 +1,20 @@
+library(rgdal)
+library(rgeos)
+library(maptools)
+library(sp)
+library(ggplot2)
+library(broom)
+library(stargazer)
+library(dotwhisker)
+library(ggthemes)
+
+
+
 
 # map of Germany ----------------------------------------------------------
 
-library(rgdal)
-library(maptools)
+
+
 src <- "http://sg.geodatenzentrum.de/web_download/vg/vg1000-ew_3112/utm32s/shape/vg1000-ew_3112.utm32s.shape.ebenen.zip"
 lcl <- "data/germany_shape.zip"
 
@@ -19,8 +31,8 @@ germany <- spTransform(germany, CRS("+proj=longlat +ellps=GRS80 +datum=WGS84 +no
 
 # load("./data/germany.Rdata")
 
-library(broom)
-germany_df <- tidy(germany, region="RS")
+
+germany_df <- broom::tidy(germany, region="RS")
 
 ggplot(germany_df) +
   geom_map(map = germany_df, aes(long, lat, map_id = id), fill="#f0f0f0", colour = "black")
@@ -28,18 +40,23 @@ ggplot(germany_df) +
 
 ggplot(germany_df) +
   geom_map(map = germany_df, aes(long, lat, map_id = id), fill="#f0f0f0", colour = "black") +
-  coord_map() # mercator projection (others available!)
+  coord_map("vandergrinten") # mercator projection (others available!)
 
 
 ## data to plot on map:
 event_data <- read.csv("./data/event_data.csv", stringsAsFactors = FALSE)
 
 ggplot(germany_df) +
-  geom_map(map = germany_df, aes(long, lat, map_id = id), 
-           fill="#f0f0f0", colour = "black") +
+  geom_map(map = germany_df, aes(long, lat, map_id = id, fill=EWZ), colour = "red") +
   geom_point(data=event_data, aes(lon, lat, colour=kategorie)) +
+  scale_colour_brewer(palette = "Pastel1") +
   coord_map()
 
+merge_data <- germany_data[, c("RS", "EWZ")]
+merge_data$RS <- as.character(merge_data$RS)
+
+germany_df_ewz <- germany_df %>%
+  left_join(merge_data, by = c("id" = "RS"))
 
 
 # lacina world plot -------------------------------------------------------
@@ -52,7 +69,7 @@ world_df <- tidy(world, region="ISO3")
 
 ggplot(world_df) +
   geom_map(map = world_df, aes(long, lat, map_id = id)) +
-  coord_map()
+  coord_map("vandergrinten")
 
 ## get lacina data:
 lacina <- read.csv("./data/lacina/lacina.csv")
@@ -60,6 +77,7 @@ lacina$cname <- sub("RUM", "ROM", lacina$cname)
 lacina$cname <- sub("PAk", "PAK", lacina$cname)
 
 ### summarise: sum of deaths per 1000 inhabitants of each country
+library(countrycode)
 deaths <- lacina %>%
   group_by(cname) %>%
   summarise(deaths = sum(battledeadbest, na.rm = TRUE),
@@ -109,7 +127,6 @@ model_6 <- lm(rel_scope ~ location + ln_land_area + duration + border + resource
 
 
 # tables
-library(stargazer)
 stargazer(list(model_1, model_2), style="apsr")
 
 ##  write to html-file (helpful for use with MS Word)
@@ -118,7 +135,7 @@ stargazer(list(model_3, model_4, model_5, model_6), type="html", out = "./table_
 
 
 # plots
-library(dotwhisker)
+
 
 dwplot(list(model_1, model_2),  alpha=0.05) +
   geom_vline(xintercept = 0) +
