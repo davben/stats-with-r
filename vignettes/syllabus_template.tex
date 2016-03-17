@@ -30,6 +30,9 @@ $if(euro)$
 $endif$
 \else % if luatex or xelatex
   \ifxetex
+%     \usepackage{polyglossia}
+%     \setmainlanguage[spelling=new,babelshorthands=true]{german}
+%\usepackage[ngerman]{babel}
     \usepackage{mathspec}
     \usepackage{xltxtra,xunicode}
   \else
@@ -143,12 +146,12 @@ $if(verbatim-in-note)$
 $endif$
 
 $if(lang)$
-\ifxetex
+%\ifxetex
   \usepackage{polyglossia}
-  \setmainlanguage{$mainlang$}
-\else
-  \usepackage[$lang$]{babel}
-\fi
+  \setmainlanguage[babelshorthands=true]{$mainlang$}
+% \else
+%   \usepackage[$lang$]{babel}
+% \fi
 $endif$
 
 $if(title)$
@@ -174,20 +177,20 @@ $endfor$
       {$if(semester)${\mdseries $semester$}$endif$}
   \end{center}
   \begin{minipage}[t][][t]{0.23\linewidth}
-			$if(slot)$Termin:$endif$\\
-			$if(room)$Raum:$endif$\\
-			Dozent:\\
-			$if(email)$E-Mail:$endif$\\
-			$if(phone)$Telefon:$endif$\\
-			$if(contact)$Sprechstunde:$endif$\\
+			$if(slot)$Termin:\\$endif$
+			$if(room)$Raum:\\$endif$
+			$if(author)$Dozent:\\$endif$
+			$if(email)$E-Mail:\\$endif$
+			$if(phone)$Telefon:\\$endif$
+			$if(contact)$Sprechstunde:\\$endif$
 		\end{minipage}
 		\begin{minipage}[t][][t]{0.7\linewidth}
-			$if(slot)$$slot$$endif$\\
-			$if(room)$$room$$endif$\\
-			\@author\\
-			$if(email)$$email$$endif$\\
-			$if(phone)$$phone$$endif$\\
-			$if(contact)$$contact$$endif$\\
+			$if(slot)$$slot$\\$endif$
+			$if(room)$$room$\\$endif$
+			$if(author)$\@author\\$endif$
+			$if(email)$$email$\\$endif$
+			$if(phone)$$phone$\\$endif$
+			$if(contact)$$contact$\\$endif$
 		\end{minipage}
  }
  

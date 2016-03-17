@@ -28,8 +28,7 @@ summary(model1)
 model2 <- lm(lnbdb ~ lnduration + cw + democ + ethnicpolar,
              data = lacina)
 
-
-
+summary(model2)
 
 # Deskriptive Statistik ---------------------------------------------------
 

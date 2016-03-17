@@ -10,12 +10,14 @@ library(ggplot2)
 ## Fig. 1
 hist(lacina$battledeadbest, breaks = 200, main = "", xlab = "Battle Deaths (best estimate)")
 
-ggplot(data=lacina, aes(battledeadbest)) +
-  geom_histogram(binwidth = 10000, fill="white", colour="black") +
+ggplot(data=lacina, aes(lnbdb)) +
+  geom_histogram(fill="white", colour="black") +
   scale_x_continuous(name = "Battle Deaths (best estimate)") +
-  scale_y_continuous(limits = c(0, 60)) +
+  #scale_y_continuous(limits = c(0, 60)) +
   theme_bw()
 
+library(car)
+Boxplot(lacina$lnbdb, labels=lacina$conflict_name)
 
 
 ## Summary Table
@@ -52,7 +54,7 @@ sum(lacina$squared_error) # Wächst mit der Anzahl der Beobachtungen!
 ### Varianz
 ### Normierung auf Anzahl der Beobachtungen N
 n <- nrow(lacina)
-sum(lacina$sum_squared_error) / (n - 1)
+sum(lacina$squared_error) / (n - 1)
 
 ### schnellere Berechnung der Varianz:
 var(lacina$lnbdb, na.rm = TRUE)

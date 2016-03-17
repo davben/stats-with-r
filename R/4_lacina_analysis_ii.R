@@ -10,6 +10,7 @@ controls <- read.csv("./data/lacina/controls.csv", stringsAsFactors = FALSE)
 
 # gdp
 gdp_long <- gather(gdp, cname, gdp, -year) # mit tidyr
+
 gdp_long_melt <- melt(gdp, "year", variable.name = "cname", value.name = "gdp") # mit reshape2
 
 all.equal(gdp_long, gdp_long_melt) # Vergleich beider Methoden
@@ -21,6 +22,8 @@ gdp_long <- na.omit(gdp_long)
 gdp_long$ccode <- countrycode(sourcevar = gdp_long$cname, origin = "cowc",
                               destination = "cown")
 table(is.na(gdp_long$ccode))
+
+gdp_long[is.na(gdp_long$ccode), ]
 
 gdp_long$cname <- sub("RUM", "ROM", gdp_long$cname)
 gdp_long$ccode <- countrycode(sourcevar = gdp_long$cname, origin = "cowc",
@@ -67,13 +70,17 @@ all.equal(lacina_dplyr, lacina_dplyr2)
 
 # Variablen, die generiert werden müssen:
 ## Konfliktdauer
+lacina$duration <- lacina$end - lacina$begin + 1
 
 ## Tote pro Jahr (Rate)
-
+lacina$rate <- lacina$battledeadbest / lacina$duration
 ## logarithmen
-
+lacina$ln_duration <- log(lacina$duration)
+lacina$ln_pop <- log(lacina$pop)
+lacina$ln_gdp <- log(lacina$gdp)
+lacina$ln_milqual <- log(lacina$milqual)
 ## Cold War Dummy
-
+lacina$cw <- lacina$begin < 1989
 
 
 
@@ -81,7 +88,7 @@ all.equal(lacina_dplyr, lacina_dplyr2)
 # Replikation
 library(ggplot2)
 ## Fig. 1
-hist(lacina$battledeadbest, breaks = 200)
+hist(lacina$battledeadbest, breaks = 200, main = "", xlab = "Battle Deaths (best estimate)")
 
 ggplot(data=lacina, aes(battledeadbest)) +
   geom_histogram(binwidth = 10000)
